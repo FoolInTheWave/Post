@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+import domain.Register;
+import domain.Store;
+import gui.MainController;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -19,25 +12,22 @@ import javafx.stage.Stage;
 public class Main extends Application {
   
   @Override
-  public void start(Stage primaryStage) {
-    Button btn = new Button();
-    btn.setText("Say 'Hello World'");
-    btn.setOnAction(new EventHandler<ActionEvent>() {
-      
-      @Override
-      public void handle(ActionEvent event) {
-        System.out.println("Hello World!");
-      }
-    });
+  public void start(Stage stage) {
+    Store store = new Store();
+    Register register = store.getRegister();
+    MainController mainController = new MainController();
     
-    StackPane root = new StackPane();
-    root.getChildren().add(btn);
+    mainController = mainController.loadController("/gui/Main.fxml");
+    mainController.setStore(store);
+    mainController.setProcessSaleController();
+    mainController.showProcessSale();
     
-    Scene scene = new Scene(root, 300, 250);
+    Scene scene = new Scene(mainController.getView(), 650, 530);
+    scene.getStylesheets().add("gui/Styles.css");
     
-    primaryStage.setTitle("Hello World!");
-    primaryStage.setScene(scene);
-    primaryStage.show();
+    stage.setScene(scene);
+    stage.setTitle("MoeMart - Are you wit me?!");
+    stage.show();
   }
 
   /**

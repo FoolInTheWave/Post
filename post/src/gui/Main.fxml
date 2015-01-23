@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
+
+    <!-- Header -->
+    <top>
+        <VBox spacing="5">
+            <styleClass>
+                <String fx:value="header" />
+            </styleClass>
+            <children>
+                <Label text="MoeMart" textFill="WHITE">
+                    <styleClass>
+                        <String fx:value="label" />
+                        <String fx:value="title" />
+                    </styleClass>
+                </Label>
+                <Label text="Oooooh what you do?!" textFill="WHITE">
+                    <styleClass>
+                        <String fx:value="label" />
+                        <String fx:value="tag-line" />
+                    </styleClass>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+
+    <!-- Content Area -->
+    <center>
+        <BorderPane fx:id="contentArea">
+            <styleClass>
+                <String fx:value="body" />
+            </styleClass>
+        </BorderPane>
+    </center>
+
+</BorderPane>

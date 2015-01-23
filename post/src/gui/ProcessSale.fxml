@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ProcessSaleController">
+   <children>
+      <VBox fx:id="root" alignment="TOP_CENTER" layoutX="14.0" layoutY="14.0" prefHeight="366.0" prefWidth="567.0">
+         <children>
+            <Label prefHeight="27.0" prefWidth="578.0" text="Item ID" />
+            <TextField fx:id="itemIdField" />
+            <Label prefHeight="27.0" prefWidth="696.0" text="Quantity" />
+            <TextField fx:id="quantityField" />
+            <Button fx:id="enterItemButton" mnemonicParsing="false" onAction="#enterItemButtonClick" text="Enter Item">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Label fx:id="currentItemLabel" prefHeight="27.0" prefWidth="651.0" text="Current Item">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="runningTotalLabel" prefHeight="27.0" prefWidth="702.0" text="Running Total" />
+            <Button fx:id="processSaleButton" mnemonicParsing="false" onAction="#processSaleButtonClick" text="Process Sale">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
