@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Sale {
 
-  private List saleLineItems = new ArrayList();
+  private List<SalesLineItem> saleLineItems = new ArrayList<>();
   private boolean isComplete = false;
   private Date date = new Date();
   private Payment payment;
@@ -22,6 +22,11 @@ public class Sale {
 
   public void becomeComplete() {
     isComplete = true;
+    saleLineItems = new ArrayList<>();
+  }
+  
+  public boolean isComplete() {
+    return isComplete;
   }
 
   public Money getTotal() {
@@ -40,6 +45,10 @@ public class Sale {
 
   public Money getBalance() {
     return payment.getAmount().minus(getTotal());
+  }
+  
+  public SalesLineItem getLastItem() {
+    return saleLineItems.get(saleLineItems.size() - 1);
   }
 
 }

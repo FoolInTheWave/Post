@@ -15,6 +15,8 @@ public class MainController {
   private BorderPane contentArea;
   
   private ProcessSaleController processSaleController;
+  private PaymentController paymentController;
+  
   private Store store;
   
   public MainController() {
@@ -26,12 +28,30 @@ public class MainController {
   }
   
   public void showProcessSale() {
+    processSaleController.resetView();
     contentArea.setCenter(processSaleController.getView());
+  }
+  
+  public void showPayment() {
+    this.paymentController.setAmountDueField(String.valueOf(
+        processSaleController.getRegister().getSale().getTotal().getAmount()
+    ));
+    this.paymentController.setSale(
+        processSaleController.getRegister().getSale()
+    );
+    paymentController.resetView();
+    contentArea.setCenter(paymentController.getView());
   }
   
   public void setProcessSaleController() {
     this.processSaleController = loadController("/gui/ProcessSale.fxml");
+    this.processSaleController.setMainController(this);
     this.processSaleController.setRegister(store.getRegister());
+  }
+  
+  public void setPaymentController() {
+    this.paymentController = loadController("/gui/Payment.fxml");
+    this.paymentController.setMainController(this);
   }
   
   public void setStore(Store store) {

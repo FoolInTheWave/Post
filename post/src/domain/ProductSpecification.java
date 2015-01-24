@@ -27,5 +27,5 @@ public class ProductSpecification {
   public String getDescription() {
     return description;
   }
-
+  
 }

@@ -1,5 +1,6 @@
 package domain;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -12,21 +13,23 @@ import java.util.Map;
  */
 public class ProductCatalog {
 
-  private Map<Integer, ProductSpecification> productSpecs = new HashMap<>();
+  private Map<String, ProductSpecification> productSpecs = new HashMap<>();
 
   public ProductCatalog() {
-    String [] tokens;
     ProductSpecification spec;
+    String [] tokens;
+
+    String path = new File("src/items.txt").getAbsolutePath();
     
     try {
-      for (String line : Files.readAllLines(Paths.get("items.txt"))) {
+      for (String line : Files.readAllLines(Paths.get(path))) {
         tokens = line.split(";");
         spec = new ProductSpecification(
-            new ItemID(tokens[1]),
-            new Money(Double.valueOf(tokens[2])),
-            tokens[3]
+            new ItemID(tokens[0]),
+            new Money(Double.valueOf(tokens[1])),
+            tokens[2]
         );
-        productSpecs.put(Integer.valueOf(tokens[0]), spec);
+        productSpecs.put(spec.getUPC(), spec);
       }
     }
     catch (IOException ex) {
@@ -34,7 +37,7 @@ public class ProductCatalog {
     }
   }
 
-  public ProductSpecification getSpecification(int id) {
+  public ProductSpecification getSpecification(String id) {
     return (ProductSpecification) productSpecs.get(id);
   }
 

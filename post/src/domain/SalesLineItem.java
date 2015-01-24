@@ -18,4 +18,14 @@ public class SalesLineItem {
     return new Money(spec.getPrice().getAmount() * quant);
   }
 
+  public String [] getDetails() {
+    String [] details = {
+      spec.getDescription(),
+      String.valueOf(quant),
+      String.valueOf(getSubtotal().getAmount())
+    };
+    
+    return details;
+  }
+  
 }

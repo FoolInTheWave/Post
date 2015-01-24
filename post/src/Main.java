@@ -20,6 +20,8 @@ public class Main extends Application {
     mainController = mainController.loadController("/gui/Main.fxml");
     mainController.setStore(store);
     mainController.setProcessSaleController();
+    mainController.setPaymentController();
+    
     mainController.showProcessSale();
     
     Scene scene = new Scene(mainController.getView(), 650, 530);
