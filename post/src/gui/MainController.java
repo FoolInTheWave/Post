@@ -34,7 +34,7 @@ public class MainController {
   
   public void showPayment() {
     this.paymentController.setAmountDueField(String.valueOf(
-        processSaleController.getRegister().getSale().getTotal().getAmount()
+        processSaleController.getRegister().getSale().getTotal().toString()
     ));
     this.paymentController.setSale(
         processSaleController.getRegister().getSale()

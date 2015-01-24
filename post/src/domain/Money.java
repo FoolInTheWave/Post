@@ -1,5 +1,7 @@
 package domain;
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author Caleb
@@ -28,4 +30,9 @@ public class Money {
     return new Money(this.amount -= newItemPrice.getAmount());
   }
   
+  @Override
+  public String toString() {
+    NumberFormat formatter = NumberFormat.getCurrencyInstance();
+    return formatter.format(this.amount);
+  }
 }
