@@ -13,11 +13,11 @@
       <VBox fx:id="root" alignment="TOP_CENTER" layoutX="14.0" layoutY="14.0" prefHeight="456.0" prefWidth="612.0">
          <children>
             <Label prefHeight="27.0" prefWidth="716.0" text="Amount Due" />
-            <TextField fx:id="amountDueField" editable="false" />
+            <TextField fx:id="amountDueField" editable="false" maxHeight="31.0" maxWidth="716.0" prefHeight="31.0" prefWidth="716.0" />
             <Label prefWidth="716.0" text="Amount Tendered" />
-            <TextField fx:id="amountTenderedField" />
+            <TextField fx:id="amountTenderedField" maxHeight="31.0" maxWidth="716.0" prefHeight="31.0" prefWidth="716.0" />
             <Label prefWidth="716.0" text="Change Due" />
-            <TextField fx:id="changeDueField" editable="false" />
+            <TextField fx:id="changeDueField" editable="false" maxHeight="31.0" maxWidth="716.0" prefHeight="31.0" prefWidth="716.0" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button fx:id="calculateChangeButton" mnemonicParsing="false" onAction="#calculateChangeButtonClick" text="Calculate Change">

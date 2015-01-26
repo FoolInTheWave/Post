@@ -1,22 +1,31 @@
 package gui;
 
 import domain.Store;
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 
-public class MainController {
+public class MainController implements Initializable {
 
   @FXML
   private Parent root;
   @FXML
   private BorderPane contentArea;
+  @FXML
+  private ImageView logoView;
   
   private ProcessSaleController processSaleController;
   private PaymentController paymentController;
   
+  private Image logo;
   private Store store;
   
   public MainController() {
@@ -25,6 +34,15 @@ public class MainController {
 
   public Parent getView() {
     return root;
+  }
+  
+  /**
+   * Initializes the controller class.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle rb) {
+    logo = new Image(new File("src/Moe.gif").toURI().toString());
+    logoView.setImage(logo);
   }
   
   public void showProcessSale() {

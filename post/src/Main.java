@@ -28,7 +28,7 @@ public class Main extends Application {
     scene.getStylesheets().add("gui/Styles.css");
     
     stage.setScene(scene);
-    stage.setTitle("MoeMart - Are you wit me?!");
+    stage.setTitle("MoeMart - Point of Sale System");
     stage.show();
   }
 

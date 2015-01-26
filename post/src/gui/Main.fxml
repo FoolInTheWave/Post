@@ -1,34 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.paint.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <BorderPane fx:id="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
-
-    <!-- Header -->
-    <top>
-        <VBox spacing="5">
-            <styleClass>
-                <String fx:value="header" />
-            </styleClass>
-            <children>
-                <Label text="MoeMart" textFill="WHITE">
-                    <styleClass>
-                        <String fx:value="label" />
-                        <String fx:value="title" />
-                    </styleClass>
-                </Label>
-                <Label text="Oooooh what you do?!" textFill="WHITE">
-                    <styleClass>
-                        <String fx:value="label" />
-                        <String fx:value="tag-line" />
-                    </styleClass>
-                </Label>
-            </children>
-        </VBox>
-    </top>
 
     <!-- Content Area -->
     <center>
@@ -38,5 +16,37 @@
             </styleClass>
         </BorderPane>
     </center>
+   <top>
+      <BorderPane prefHeight="48.0" prefWidth="286.0" styleClass="header" BorderPane.alignment="CENTER">
+         <left>
+            <Pane prefHeight="63.0" prefWidth="307.0" BorderPane.alignment="CENTER">
+               <children>
+                      <Label prefHeight="21.0" prefWidth="125.0" text="MoeMart" textFill="WHITE">
+                          <styleClass>
+                              <String fx:value="label" />
+                              <String fx:value="title" />
+                          </styleClass>
+                      </Label>
+                      <Label layoutY="32.0" prefHeight="21.0" prefWidth="263.0" text="Oooooh what you do?!" textFill="WHITE">
+                          <styleClass>
+                              <String fx:value="label" />
+                              <String fx:value="tag-line" />
+                          </styleClass>
+                      </Label>
+               </children>
+            </Pane>
+         </left>
+         <right>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <ImageView fx:id="logoView" fitHeight="63.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+               </center>
+               <bottom>
+                  <Label text="Are you wit me?!" textFill="WHITE" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
+         </right>
+      </BorderPane>
+   </top>
 
 </BorderPane>

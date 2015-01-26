@@ -41,9 +41,9 @@
                </children>
             </HBox>
             <Label prefHeight="27.0" prefWidth="696.0" text="Item ID" />
-            <TextField fx:id="itemIdField" prefWidth="696.0" />
+            <TextField fx:id="itemIdField" maxHeight="31.0" maxWidth="696.0" prefHeight="31.0" prefWidth="696.0" />
             <Label prefHeight="27.0" prefWidth="696.0" text="Quantity" />
-            <TextField fx:id="quantityField" prefWidth="696.0" />
+            <TextField fx:id="quantityField" maxHeight="31.0" maxWidth="696.0" prefHeight="31.0" prefWidth="696.0" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button fx:id="enterItemButton" mnemonicParsing="false" onAction="#enterItemButtonClick" text="Enter Item">
