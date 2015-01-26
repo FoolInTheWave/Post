@@ -50,7 +50,8 @@ public class ProcessSaleController implements Initializable {
    */
   @Override
   public void initialize(URL url, ResourceBundle rb) {
-    // TODO
+    itemIdField.setText(null);
+    quantityField.setText(null);
   }
 
   @FXML
@@ -58,18 +59,21 @@ public class ProcessSaleController implements Initializable {
     if (register.getSale().isComplete())
       register.makeNewSale();
     
-    register.enterItem(
-        itemIdField.getText(),
-        Integer.valueOf(quantityField.getText())
-    );
+    if (itemIdField.getText() != null && quantityField.getText() != null)
+    {
+      register.enterItem(
+          itemIdField.getText(),
+          Integer.valueOf(quantityField.getText())
+      );
     
-    String [] details = register.getSale().getLastItem().getDetails();
-    descriptionLabel.setText(details[0]);
-    quantityLabel.setText(details[1]);
-    priceLabel.setText(details[2]);
-    runningTotalLabel.setText(String.valueOf(
-        register.getSale().getTotal().getAmount()
-    ));
+      String [] details = register.getSale().getLastItem().getDetails();
+      descriptionLabel.setText(details[0]);
+      quantityLabel.setText(details[1]);
+      priceLabel.setText(details[2]);
+      runningTotalLabel.setText(String.valueOf(
+          register.getSale().getTotal().getAmount()
+      ));
+    }
     
     itemIdField.setText(null);
     quantityField.setText(null);
