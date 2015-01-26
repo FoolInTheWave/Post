@@ -7,7 +7,14 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Caleb Miller
+ * @author Caleb Miller, Steve Foco
+ * @date 01/23/2015
+ * 
+ * This program simulates a simple Point of Sale Terminal for a store.
+ * 
+ * Technologies used:
+ * Java 8
+ * JavaFX 2.2
  */
 public class Main extends Application {
   
