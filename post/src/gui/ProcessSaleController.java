@@ -89,7 +89,7 @@ public class ProcessSaleController implements Initializable {
   }
   
   /**
-   * Executes when the "calculate change" button is clicked.
+   * Executes when the "process sale" button is clicked.
    * Switches to the payment gui.
    * 
    * @param event Click event that fires this method.
@@ -100,10 +100,8 @@ public class ProcessSaleController implements Initializable {
   }
   
   /**
-   * Executes when the "calculate change" button is clicked.
-   * Calculates change due after the sale.
-   * If the payment was sufficient, informs the sale class of the payment
-   * being made.
+   * Returns the instance of the Register class currently associated with 
+   * this controller.
    * 
    * @return this.register
    */
@@ -111,14 +109,29 @@ public class ProcessSaleController implements Initializable {
     return this.register;
   }
   
+  /**
+   * Informs this controller of the current instance of the 
+   * MainController class.
+   * 
+   * @param mainController Current instance of the MainController class
+   */
   public void setMainController(MainController mainController) {
     this.mainController = mainController;
   }
   
+  /**
+   * Informs this controller of the current instance of the Register class.
+   * 
+   * @param register Current instance of the Register class.
+   */
   public void setRegister(Register register) {
     this.register = register;
   }
   
+  /**
+   * Clears the labels on the process sale gui that show item details
+   *
+   */
   public void resetView() {
     descriptionLabel.setText(null);
     quantityLabel.setText(null);
