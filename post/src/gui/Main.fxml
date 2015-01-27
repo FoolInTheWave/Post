@@ -39,7 +39,7 @@
          <right>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <center>
-                  <ImageView fx:id="logoView" fitHeight="63.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+                  <ImageView fx:id="logoView" fitHeight="88.2" fitWidth="77.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
                </center>
                <bottom>
                   <Label text="Are you wit me?!" textFill="WHITE" BorderPane.alignment="CENTER" />
