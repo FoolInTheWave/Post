@@ -42,6 +42,11 @@ public class ProcessSaleController implements Initializable {
   
   private Register register;
 
+  /**
+   * Returns the gui components of the view.
+   * 
+   * @return root gui components to display for this view.
+   */
   public Node getView() {
     return root;
   }

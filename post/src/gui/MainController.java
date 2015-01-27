@@ -42,6 +42,11 @@ public class MainController implements Initializable {
     
   }
 
+  /**
+   * Returns the gui components of the view.
+   * 
+   * @return root gui components to display for this view.
+   */
   public Parent getView() {
     return root;
   }

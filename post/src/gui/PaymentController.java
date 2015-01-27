@@ -35,6 +35,11 @@ public class PaymentController implements Initializable {
   private MainController mainController;
   private Sale sale;
 
+  /**
+   * Returns the gui components of the view.
+   * 
+   * @return root gui components to display for this view.
+   */
   public Node getView() {
     return root;
   }
