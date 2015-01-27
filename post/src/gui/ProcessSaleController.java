@@ -12,9 +12,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
- * FXML Controller class
- *
- * @author Caleb
+ * @author Caleb Miller, Steve Foco
+ * @date 01/23/2015
+ * 
+ * This class implements the controller in charge of the process sale gui.
  */
 public class ProcessSaleController implements Initializable {
 
@@ -54,6 +55,14 @@ public class ProcessSaleController implements Initializable {
     quantityField.setText(null);
   }
 
+  /**
+   * Executes when the "enter item" button is clicked.
+   * Creates new sale if this has not been done yet.
+   * Informs the register instance of the item and quantity being added to sale.
+   * Shows item's information on the gui.
+   * 
+   * @param event Click event that fires this method.
+   */
   @FXML
   private void enterItemButtonClick(ActionEvent event) {
     if (register.getSale().isComplete())
@@ -79,11 +88,25 @@ public class ProcessSaleController implements Initializable {
     quantityField.setText(null);
   }
   
+  /**
+   * Executes when the "calculate change" button is clicked.
+   * Switches to the payment gui.
+   * 
+   * @param event Click event that fires this method.
+   */
   @FXML
   private void processSaleButtonClick(ActionEvent event) {
     mainController.showPayment();
   }
   
+  /**
+   * Executes when the "calculate change" button is clicked.
+   * Calculates change due after the sale.
+   * If the payment was sufficient, informs the sale class of the payment
+   * being made.
+   * 
+   * @return this.register
+   */
   public Register getRegister() {
     return this.register;
   }

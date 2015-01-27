@@ -15,7 +15,7 @@ public class Store {
   /**
    * Returns the single Register instance of the Store.
    * 
-   * @return
+   * @return register Instance of register class currently being used.
    */
   public Register getRegister() {
     return register;

@@ -18,6 +18,13 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
   
+  /**
+   * Sets up the stage for the initial load of the gui.
+   * Provides main controller with references to other controllers.
+   * Shows the sale input screen with the correct size and attributes.
+   * 
+   * @param stage Instance of JavaFX Stage class which is used to show the gui.
+   */
   @Override
   public void start(Stage stage) {
     Store store = new Store();
