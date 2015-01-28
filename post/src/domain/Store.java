@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Caleb Miller, Steve Foco
@@ -11,6 +13,7 @@ public class Store {
 
   private ProductCatalog catalog = new ProductCatalog();
   private Register register = new Register(catalog);
+  private ArrayList<Sale> sales = new ArrayList<>();
 
   /**
    * Returns the single Register instance of the Store.
@@ -18,7 +21,7 @@ public class Store {
    * @return register Instance of register class currently being used.
    */
   public Register getRegister() {
-    return register;
+    return this.register;
   }
 
   /**
@@ -27,7 +30,7 @@ public class Store {
    * @param s Sale instance to add.
    */
   public void addSale(Sale s) {
-    // Add to the completed sale list
+    this.sales.add(s);
   }
   
 }

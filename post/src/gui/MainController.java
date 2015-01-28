@@ -112,6 +112,15 @@ public class MainController implements Initializable {
   }
   
   /**
+   * Returns the Store object stored by this MainController instance.
+   * 
+   * @return Store
+   */
+  public Store getStore() {
+    return this.store;
+  }
+  
+  /**
    * Used in assigning .fxml gui files to their controllers.
    * 
    * @param fxmlFile The file path of the .fxml gui file to be assigned.

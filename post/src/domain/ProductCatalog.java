@@ -55,5 +55,15 @@ public class ProductCatalog {
   public ProductSpecification getSpecification(String id) {
     return (ProductSpecification) productSpecs.get(id);
   }
+  
+  /**
+   * Searches the product catalog for a specified key (UPC).
+   * 
+   * @param id
+   * @return Boolean value indicating the result of the search.
+   */
+  public boolean searchProductCatalog(String id) {
+    return productSpecs.containsKey(id);
+  }
 
 }

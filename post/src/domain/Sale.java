@@ -35,9 +35,7 @@ public class Sale {
    * list.
    */
   public void becomeComplete() {
-    this.date = new Date();
     this.isComplete = true;
-    this.saleLineItems = new ArrayList<>();
   }
   
   /**
@@ -92,6 +90,22 @@ public class Sale {
    */
   public SalesLineItem getLastItem() {
     return saleLineItems.get(saleLineItems.size() - 1);
+  }
+  
+  /**
+   * Sets the date attribute for this Sale instance.
+   * 
+   * @param date 
+   */
+  public void setDate(Date date) {
+    this.date = date;
+  }
+  
+  /**
+   * Clears the saleLineItems ArrayList for this Sale instance.
+   */
+  public void clearSaleLineItems() {
+    saleLineItems = new ArrayList<>();
   }
 
 }

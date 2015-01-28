@@ -3,6 +3,7 @@ package gui;
 import domain.Money;
 import domain.Sale;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -90,6 +91,9 @@ public class PaymentController implements Initializable {
   private void submitPaymentButtonClick(ActionEvent event) {
     if (changeDueField != null) {
       sale.becomeComplete();
+      sale.setDate(new Date());
+      mainController.getStore().addSale(sale);
+      sale.clearSaleLineItems();
       mainController.showProcessSale();
     }
   }
@@ -101,6 +105,10 @@ public class PaymentController implements Initializable {
    */
   public void setMainController(MainController mainController) {
     this.mainController = mainController;
+  }
+  
+  public void setStore() {
+    
   }
 
   /**

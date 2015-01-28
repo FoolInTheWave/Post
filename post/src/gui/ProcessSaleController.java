@@ -75,18 +75,23 @@ public class ProcessSaleController implements Initializable {
     
     if (itemIdField.getText() != null && quantityField.getText() != null)
     {
-      register.enterItem(
-          itemIdField.getText(),
-          Integer.valueOf(quantityField.getText())
-      );
-    
-      String [] details = register.getSale().getLastItem().getDetails();
-      descriptionLabel.setText(details[0]);
-      quantityLabel.setText(details[1]);
-      priceLabel.setText(details[2]);
-      runningTotalLabel.setText(String.valueOf(
-          register.getSale().getTotal().getAmount()
-      ));
+      if (register.getProductCatalog()
+          .searchProductCatalog(itemIdField.getText())) {
+        register.enterItem(
+            itemIdField.getText(),
+            Integer.valueOf(quantityField.getText())
+        );
+        
+        String [] details = register.getSale().getLastItem().getDetails();
+        descriptionLabel.setText(details[0]);
+        quantityLabel.setText(details[1]);
+        priceLabel.setText(details[2]);
+        runningTotalLabel.setText(String.valueOf(
+            register.getSale().getTotal().getAmount()
+        ));
+      } else {
+        descriptionLabel.setText("Item not found in catalog.");
+      }
     }
     
     itemIdField.setText(null);

@@ -51,4 +51,13 @@ public class Register {
     sale.makeLineItem(spec, quantity);
   }
 
+  /**
+   * Returns the ProductCatalog stored in this Register instance.
+   * 
+   * @return ProductCatalog
+   */
+  public ProductCatalog getProductCatalog() {
+    return catalog;
+  }
+  
 }
