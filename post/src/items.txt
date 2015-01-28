@@ -1,4 +1,5 @@
 853012000434;24.99;Pirate Dice Game
 123456789012;9.99;Kenny Klein - Muses
-128630265832;100;Pascal Textbook
-1;4.99;Testing
+128630265832;100.00;Pascal Textbook
+423453265323;24.95;Laptop Charger
+823434456354;9.99;Cereal Bowl
